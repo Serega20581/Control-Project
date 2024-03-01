@@ -1,4 +1,5 @@
 #!usr/bin/env node
+/* eslint-disable no-unreachable-loop */
 /* eslint-disable import/newline-after-import */
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-useless-path-segments */
@@ -43,6 +44,7 @@ const a = () => {
       choice = readlineSync.question('Enter the number of the game you want to play: ');
 
       runGame(choice);
+      return;
     }
   }
   startMenu();
