@@ -19,7 +19,7 @@ function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function brainScm() {
+function runBrainScm() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\nFind the smallest common multiple of given numbers.`);
@@ -48,4 +48,4 @@ function brainScm() {
   console.log(`Congratulations, ${name}!`);
 }
 
-export default brainScm;
+export default runBrainScm;

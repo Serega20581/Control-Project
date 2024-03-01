@@ -23,7 +23,7 @@ function hideElement(progression) {
   return { hiddenValue, progression };
 }
 
-function brainProgression() {
+function runBrainProgression() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\nWhat number is missing in the progression?`);
@@ -51,4 +51,4 @@ function brainProgression() {
   console.log(`Congratulations, ${name}!`);
 }
 
-export default brainProgression;
+export default runBrainProgression;
