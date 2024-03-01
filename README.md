@@ -10,4 +10,4 @@
 
 #### 1. [Brain-scm asciinema](https://asciinema.org/a/BdSqeDiVbD3u2Rm7PaMW0kQUz)
 #### 2. [Brain-progression asciinema](https://asciinema.org/a/LOJQ2PbOcfQ8nn0ksl02VXHxq)
-#### 3. [Menu-game asciinema](https://asciinema.org/a/7F9eBQq5K2m2pYX2KQFNqTvnN)
+#### 3. [Menu-game asciinema](https://asciinema.org/a/QU6zXVV9ueUCJtsoNaUyouZVy)
