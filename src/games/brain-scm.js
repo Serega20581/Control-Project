@@ -1,15 +1,16 @@
 #!usr/bin/env node
+/* eslint-disable import/extensions */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
 /* eslint-disable no-plusplus */
-import readlineSync from 'readline-sync';
+import { b, getName } from '../index.js';
 
 function calculateLCM(num1, num2) {
-  const gcd = (a, b) => {
-    if (b === 0) {
+  const gcd = (a, c) => {
+    if (c === 0) {
       return a;
     }
-    return gcd(b, a % b);
+    return gcd(c, a % c);
   };
 
   return (num1 * num2) / gcd(num1, num2);
@@ -20,9 +21,7 @@ function generateRandomNumber(min, max) {
 }
 
 function runBrainScm() {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\nFind the smallest common multiple of given numbers.`);
+  const name = getName();
 
   const numberOfQuestions = 3;
 
@@ -32,20 +31,16 @@ function runBrainScm() {
     const num3 = generateRandomNumber(1, 100);
     const expression = `${num1} ${num2} ${num3}`;
     const correctAnswer = calculateLCM(calculateLCM(num1, num2), num3);
-
-    console.log(`Question: ${expression}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
+    const userAnswer = b(3, name, expression);
     if (Number(userAnswer) === correctAnswer) {
-      console.log('Correct!');
+      b(4, name);
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
+      b(5, name, 0, userAnswer, correctAnswer);
       return;
     }
   }
 
-  console.log(`Congratulations, ${name}!`);
+  b(6, name);
 }
 
 export default runBrainScm;

@@ -1,8 +1,9 @@
 #!usr/bin/env node
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
 /* eslint-disable max-len */
-import readlineSync from 'readline-sync';
+import { b, getName } from '../index.js';
 
 function generateGeometricProgression(length) {
   const start = Math.floor(Math.random() * 10) + 1;
@@ -24,9 +25,7 @@ function hideElement(progression) {
 }
 
 function runBrainProgression() {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!\nWhat number is missing in the progression?`);
+  const name = getName();
 
   const numberOfQuestions = 3;
 
@@ -35,20 +34,16 @@ function runBrainProgression() {
     const { hiddenValue, progression } = hideElement(generateGeometricProgression(progressionLength));
     const expression = progression.join(' ');
     const correctAnswer = hiddenValue;
-
-    console.log(`Question: ${expression}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
+    const userAnswer = b(3, name, expression);
     if (Number(userAnswer) === correctAnswer) {
-      console.log('Correct!');
+      b(4, name);
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
+      b(5, name, 0, userAnswer, correctAnswer);
       return;
     }
   }
 
-  console.log(`Congratulations, ${name}!`);
+  b(6, name);
 }
 
 export default runBrainProgression;
