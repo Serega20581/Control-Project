@@ -1,8 +1,5 @@
 #!usr/bin/env node
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
-/* eslint-disable no-param-reassign */
-/* eslint-disable max-len */
+
 import { b, getName } from '../index.js';
 
 function generateGeometricProgression(length) {
@@ -20,8 +17,9 @@ function generateGeometricProgression(length) {
 function hideElement(progression) {
   const hiddenIndex = Math.floor(Math.random() * progression.length);
   const hiddenValue = progression[hiddenIndex];
-  progression[hiddenIndex] = '..';
-  return { hiddenValue, progression };
+  const finalProgression = progression;
+  finalProgression[hiddenIndex] = '..';
+  return { hiddenValue, finalProgression };
 }
 
 function runBrainProgression() {

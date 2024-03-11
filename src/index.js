@@ -1,11 +1,5 @@
 #!usr/bin/env node
-/* eslint-disable no-unused-expressions */
-/* eslint-disable max-len */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable import/prefer-default-export */
+
 import readlineSync from 'readline-sync';
 
 const getName = () => {

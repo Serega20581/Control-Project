@@ -1,8 +1,5 @@
 #!usr/bin/env node
-/* eslint-disable import/extensions */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-console */
-/* eslint-disable no-plusplus */
+
 import { b, getName } from '../index.js';
 
 function calculateLCM(num1, num2) {

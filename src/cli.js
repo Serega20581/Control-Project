@@ -1,19 +1,15 @@
 #!usr/bin/env node
-/* eslint-disable no-unreachable-loop */
-/* eslint-disable import/newline-after-import */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-useless-path-segments */
-/* eslint-disable quotes */
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-console */
+
 import readlineSync from 'readline-sync';
 
-import runBrainProgression from '../src/games/brain-progression.js';
-import runBrainScm from '../src/games/brain-scm.js';
+import runBrainProgression from './games/brain-progression.js';
+
+import runBrainScm from './games/brain-scm.js';
+
 const a = () => {
   function showMenu() {
     console.log('Welcome to the menu-game!');
-    console.log("Choose the game!");
+    console.log('Choose the game!');
     console.log('1. brain-scm');
     console.log('2. brain-progression');
     console.log('0. Exit');
@@ -49,4 +45,4 @@ const a = () => {
   }
   startMenu();
 };
-export { a };
+export default a;
