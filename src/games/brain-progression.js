@@ -29,8 +29,8 @@ function runBrainProgression() {
 
   for (let i = 0; i < numberOfQuestions; i += 1) {
     const progressionLength = Math.floor(Math.random() * 6) + 5;
-    const { hiddenValue, progression } = hideElement(generateGeometricProgression(progressionLength));
-    const expression = progression.join(' ');
+    const { hiddenValue, finalProgression } = hideElement(generateGeometricProgression(progressionLength));
+    const expression = finalProgression.join(' ');
     const correctAnswer = hiddenValue;
     const userAnswer = b(3, name, expression);
     if (Number(userAnswer) === correctAnswer) {
